@@ -133,9 +133,9 @@ button {
 .rune::before {
     content: '';
     position: absolute;
-    width: 90px; /* Length of the connection */
-    height: 8px; /* Inner line thickness */
-    background-color: rgba(150, 150, 150, 0.22); /* Dim gray for inactive */
+    width: 90px;
+    height: 8px;
+    background-color: rgba(150, 150, 150, 0.22);
     left: -90px;
     top: 50%;
     transform: translateY(-50%);
@@ -143,13 +143,13 @@ button {
 .rune::after {
     content: '';
     position: absolute;
-    width: 90px; /* Same width as inner line */
-    height: 2px; /* Outer line thickness */
-    background-color: rgba(100, 100, 100, 0.61); /* Darker gray */
+    width: 90px;
+    height: 2px;
+    background-color: rgba(100, 100, 100, 0.61);
     left: -90px;
-    top: calc(50% - 5px); /* Move upper line further up */
+    top: calc(50% - 5px);
     transform: translateY(-50%);
-    box-shadow: 0 10px 0 rgba(100, 100, 100, 0.61); /* Lower line further down */
+    box-shadow: 0 10px 0 rgba(100, 100, 100, 0.61);
 }
 
 /* Selected State */

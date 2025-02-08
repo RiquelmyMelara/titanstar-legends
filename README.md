@@ -1,46 +1,51 @@
-# Getting Started with Create React App and Redux
+# TitanStar Legends - Rune Mastery Loadout Talent Calculator 9000
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+## 📖 About the Project
+The **Rune Mastery Loadout Talent Calculator 9000** is an interactive skill tree simulator for the fictitious game **TitanStar Legends**. This tool allows players to allocate talent points in a structured rune system, mimicking the in-game experience. It enables users to plan and share their builds with the community.
 
-## Available Scripts
+## ✨ Features
+- **Interactive Talent Tree** – Click to allocate points, right-click to remove them.
+- **Dual Path System** – Two independent rune paths for flexible builds.
+- **Visual Feedback** – Activated talents glow dynamically.
+- **Connection Lines** – A three-line visual connection system that updates based on activation state.
+- **Point Allocation Rules** – Users cannot exceed the 6-point limit or skip rune dependencies.
 
-In the project directory, you can run:
+## 🚀 Installation & Setup
+To run this project locally, follow these steps:
 
-### `npm start`
+### **1️⃣ Clone the repository**
+```sh
+git clone https://github.com/RiquelmyMelara/titanstar-legends-talent-calculator.git
+cd titanstar-legends-talent-calculator
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### **2️⃣ Install dependencies**
+```sh
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### **3️⃣ Start the development server**
+```sh
+npm start
+```
+The project will be available at `http://localhost:3000/`
 
-### `npm test`
+## 🕹️ Usage
+- **Left-click** on a rune to add a point (following dependency rules).
+- **Right-click** on a rune to remove a point (only the last point per path can be removed).
+- **Hover over a rune** to preview its active state.
+- **Observe the point counter** to track available points.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🛠 Technologies Used
+- **React.js** – Component-based frontend framework.
+- **Redux Toolkit** – State management for talent point tracking.
+- **CSS Modules** – Modular styling for scoped styles.
+- **Flexbox & Grid** – Layout structuring.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📜 License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🎮 Credits
+Developed by **[Riquelmy Melara]** for the **TitanStar Legends** coding challenge.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
