@@ -1,0 +1,224 @@
+.treeContainer {
+    width: 1000px;
+    margin: 10px auto;
+    position: relative;
+    background-image: url('../../public/talent-calc-bg.png');
+}
+
+.tree {
+    text-align: center;
+}
+.titleContainer{
+    padding-top: 30px;
+}
+.title{
+    font-size: 24px;
+    font-weight: bold;
+    color: #cfc8c8;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    background-color: #5555555e;
+    width: 81%;
+    margin: 0 auto;
+}
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 90px;
+    row-gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    border: none;
+    background-color: #222;
+    color: white;
+    border-radius: 5px;
+}
+.active {
+    background-color: #4caf50;
+}
+.inactive {
+    background-color: #555;
+}
+
+.rune.selected {
+    position: relative;
+    border: 2px solid transparent;
+    animation: glowingBorder 3s linear infinite;
+    animation-delay: 0s;
+}
+.rune.unselected {
+    position: relative;
+    border: 2px solid rgba(150, 150, 150, 0.5);
+    box-shadow: 0 0 8px rgba(150, 150, 150, 0.3);
+}
+/* Smooth rotating border animation */
+@keyframes glowingBorder {
+    0% {
+        border-image: linear-gradient(0deg, rgba(0, 150, 255, 0.4), rgba(0, 150, 255, 0)) 1;
+    }
+    25% {
+        border-image: linear-gradient(90deg, rgba(0, 150, 255, 0.4), rgba(0, 150, 255, 0)) 1;
+    }
+    50% {
+        border-image: linear-gradient(180deg, rgba(0, 150, 255, 0.4), rgba(0, 150, 255, 0)) 1;
+    }
+    75% {
+        border-image: linear-gradient(270deg, rgba(0, 150, 255, 0.4), rgba(0, 150, 255, 0)) 1;
+    }
+    100% {
+        border-image: linear-gradient(360deg, rgba(0, 150, 255, 0.4), rgba(0, 150, 255, 0)) 1;
+    }
+}
+
+
+.rune.unselected {
+    background-position: 0 -50px;
+}
+
+/* Specific icons */
+.rune.stack { background-position: 0 0; }
+.rune.fork { background-position: -50px 0; }
+.rune.cake { background-position: -100px 0; }
+.rune.crown { background-position: -150px 0; }
+.rune.helmet { background-position: -200px 0; }
+.rune.goggles { background-position: -250px 0; }
+.rune.lightning { background-position: -300px 0; }
+.rune.skull { background-position: -350px 0; }
+
+/* Unselected state */
+.rune.unselected.stack { background-position: 0 -50px; }
+.rune.unselected.fork { background-position: -50px -50px; }
+.rune.unselected.cake { background-position: -100px -50px; }
+.rune.unselected.crown { background-position: -150px -50px; }
+.rune.unselected.helmet { background-position: -200px -50px; }
+.rune.unselected.goggles { background-position: -250px -50px; }
+.rune.unselected.lightning { background-position: -300px -50px; }
+.rune.unselected.skull { background-position: -350px -50px; }
+
+.tree {
+    position: relative;
+    text-align: center;
+    width: 998px;
+    height: 250px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.rune {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-image: url('../../public/talent-icons-sprite.png');
+    background-size: 400px 100px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+
+
+
+.rune::before {
+    content: '';
+    position: absolute;
+    width: 90px; /* Length of the connection */
+    height: 8px; /* Inner line thickness */
+    background-color: rgba(150, 150, 150, 0.22); /* Dim gray for inactive */
+    left: -90px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.rune::after {
+    content: '';
+    position: absolute;
+    width: 90px; /* Same width as inner line */
+    height: 2px; /* Outer line thickness */
+    background-color: rgba(100, 100, 100, 0.61); /* Darker gray */
+    left: -90px;
+    top: calc(50% - 5px); /* Move upper line further up */
+    transform: translateY(-50%);
+    box-shadow: 0 10px 0 rgba(100, 100, 100, 0.61); /* Lower line further down */
+}
+
+/* Selected State */
+.rune.selected:not(.stack):not(.helmet)::before {
+    background-color: rgba(255, 255, 255, 0.22);
+}
+
+
+.rune.stack::before,
+.rune.stack::after,
+.rune.helmet::before,
+.rune.helmet::after {
+    display: none;
+}
+
+.rune:hover {
+    transition: filter 0.2s ease-in-out;
+}
+
+/* Hover states for each rune */
+.rune:hover.stack { background-position: 0 0; }
+.rune:hover.fork { background-position: -50px 0; }
+.rune:hover.cake { background-position: -100px 0; }
+.rune:hover.crown { background-position: -150px 0; }
+.rune:hover.helmet { background-position: -200px 0; }
+.rune:hover.goggles { background-position: -250px 0; }
+.rune:hover.lightning { background-position: -300px 0; }
+.rune:hover.skull { background-position: -350px 0; }
+
+.pathLabels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgba(200, 200, 200, 0.8);
+    text-transform: uppercase;
+    height: 160px;
+    justify-content: space-between;
+}
+
+.pathLabel {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 14px;
+}
+
+.pointsCounter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+    width: 14%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pointsSpent {
+    font-size: 24px;
+    font-weight: bold;
+    color:#cfc8c8;
+    margin: 5px 0px;
+}
+
+.pointsLabel {
+    font-size: 21px;
+    margin: 5px 0px;
+    color: #81afcfa6;
+}
